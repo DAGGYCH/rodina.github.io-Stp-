@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Творческая мастерская - Родина  в стихах и прозе</title>
+    <link rel="stylesheet" href="style4.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Родина  в стихах и прозе</h1>
+            <p class="slogan">Мысли народа, обличенные в слова.</p>
+            <nav>
+                <ul>
+                    <li><a href="file:///C:/Users/Елена/Desktop/сайт%20англ/главная/ok.html">Главная</a></li>
+                    <li><a href="file:///C:/Users/Елена/Desktop/сайт%20англ/Библиотека/bibl.html">Библиотека</a></li>
+                    <li><a href="file:///C:/Users/Елена/Desktop/сайт%20англ/мастерская/master.html#">Творческая мастерская</a></li>
+                    <li><a href="file:///C:/Users/Елена/Desktop/сайт%20англ/Конкурсы/пам.html">Конкурсы</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="workshop-section">
+            <div class="container">
+                <h2>Творческая мастерская</h2>
+                <p>Поделитесь своим творчеством, вдохновленным Конституцией и правами человека!</p>
+
+                <div class="submission-form">
+                    <h3>Отправить свою работу</h3>
+                    <form action="#" method="post" enctype="multipart/form-data">  <!--  enctype - для загрузки файлов -->
+                        <div class="form-group">
+                            <label for="title">Название:</label>
+                            <input type="text" id="title" name="title" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="genre">Жанр:</label>
+                            <select id="genre" name="genre">
+                                <option value="poetry">Сказка</option>
+                                <option value="prose">Басня</option>
+                                <option value="essay">Стих</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="content">Текст произведения:</label>
+                            <textarea id="content" name="content" rows="8" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="author">Ваше имя:</label>
+                            <input type="text" id="author" name="author" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="image">Обложка (не обязательно):</label>
+                            <input type="file" id="image" name="image" accept="image/*">  <!--  accept="image/*" ограничивает загрузку только картинками -->
+                        </div>
+
+                        <button type="submit" class="button">Отправить на публикацию</button>
+                    </form>
+                </div>
+
+                <div>
+                        <li>Максимальный размер файла обложки: 2MB.</li>
+                        <li>Перед публикацией ваша работа будет проверена на соответствие требованиям.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Родина в стихах и прозе. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script> // Плавная прокрутка к якорям (если есть разделы на одной странице)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+        
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+        
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 50, // отступ от верха, чтобы шапка не закрывала
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Анимация для кнопки "Присоединиться"
+        const joinButton = document.querySelector('.button');
+        
+        if (joinButton) {
+            joinButton.addEventListener('mouseover', function() {
+                this.style.transform = 'scale(1.1)';
+                this.style.transition = 'transform 0.3s ease-in-out';
+            });
+        
+            joinButton.addEventListener('mouseout', function() {
+                this.style.transform = 'scale(1)';
+                this.style.transition = 'transform 0.3s ease-in-out';
+            });
+        }
+        
+        // Пример: добавить интерактивность для блока с избранным стихотворением
+        const featuredPoem = document.querySelector('.featured-poem');
+        
+        if (featuredPoem) {
+            featuredPoem.addEventListener('click', function() {
+                alert('Вы перешли на страницу с полным текстом стихотворения!'); // Заменить на переход на реальную страницу
+            });
+        
+            featuredPoem.style.cursor = 'pointer'; // Изменить курсор при наведении
+        }
+        
+        // Пример: Анимация появления новостей
+        const newsItems = document.querySelectorAll('.news li');
+        
+        newsItems.forEach((item, index) => {
+            item.style.opacity = 0;
+            item.style.transform = 'translateY(20px)';
+        
+            setTimeout(() => {
+                item.style.opacity = 1;
+                item.style.transform = 'translateY(0)';
+                item.style.transition = 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out';
+            }, 100 * index); // Задержка для каждого элемента
+        });
+        
+        
+        
+        
+        
+        
+        const imageInput = document.getElementById('image');
+        
+        if (imageInput) {
+            imageInput.addEventListener('change', function() {
+                if (this.files.length > 0) {
+                    const file = this.files[0];
+                    const maxSizeInBytes = 2 * 1024 * 1024; // 2MB
+        
+                    if (file.size > maxSizeInBytes) {
+                        alert('Размер файла обложки превышает 2MB. Пожалуйста, выберите другой файл.');
+                        this.value = ''; // Очистить поле выбора файла
+                    }
+                }
+            });
+        }
+
+
+        ScrollReveal().reveal('submission-form',{ delay: 400 })
+
+
+
+        function readMore() {
+ var dots = document.getElementById("dots");
+ var more = document.getElementById("more");
+ var btn = document.getElementById("btn");
+
+if (dots.style.display === "none") {
+ dots.style.display="inline";
+ btn.innerHTML="Подробнее";
+ more.style.display="none";
+} else {
+ dots.style.display="none";
+ btn.innerHTML="Скрыть";
+ more.style.display="inline";
+ }
+}
+
+    </script>
+</body>
+</html>
